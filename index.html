@@ -31,33 +31,34 @@
 
     const counter = document.querySelectorAll('span');
 
-    const getCount = async () => {
-        try {
-            const response = await fetch(`${COUNT_URL}/get/${NAMESPACE}/${KEY}`);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            setValue(data.value);
-        } catch (error) {
-            console.error('Fetch error:', error);
-            alert('Failed to retrieve count. Please try again later.');
+   const getCount = async () => {
+    try {
+        const response = await fetch(`${COUNT_URL}/get/${NAMESPACE}/${KEY}`);
+        if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.statusText}`);
         }
-    };
+        const data = await response.json();
+        setValue(data.value);
+    } catch (error) {
+        console.error('Fetch error:', error);
+        alert('Failed to retrieve count. Please try again later.');
+    }
+};
 
-    const incrementCount = async () => {
-        try {
-            const response = await fetch(`${COUNT_URL}/hit/${NAMESPACE}/${KEY}`);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            setValue(data.value);
-        } catch (error) {
-            console.error('Fetch error:', error);
-            alert('Failed to increment count. Please try again later.');
+const incrementCount = async () => {
+    try {
+        const response = await fetch(`${COUNT_URL}/hit/${NAMESPACE}/${KEY}`);
+        if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.statusText}`);
         }
-    };
+        const data = await response.json();
+        setValue(data.value);
+    } catch (error) {
+        console.error('Fetch error:', error);
+        alert('Failed to increment count. Please try again later.');
+    }
+};
+
 
     const setValue = (num) => {
         const str = num.toString().padStart(6, "0");
