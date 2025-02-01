@@ -14,7 +14,7 @@ Tech stack:-
   - MySQL
   - HTML, CSS, Javascript, JSON
   - API
-Hosting Service:-
+- Hosting Service:-
   - Vercel
 
 
