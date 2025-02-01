@@ -14,71 +14,11 @@
     <p>Hopefully, you've learnt something </p>
     <div>
         <p>The number of visitors is :</p>
-        <div class="counter">
-      <span>0</span>
-      <span>0</span>
-      <span>0</span>
-      <span>0</span>
-      <span>0</span>
-      <span>0</span>
-    </div>
-    </div>
-
-   <script>
-    const KEY = "214cd880-e06c-11ef-9cd2-0242ac120002";
-    const NAMESPACE = "https://sanjana765kulkarni.github.io/Hack-a-league_Phishing_project/";
-    const COUNT_URL = "https://api.countapi.xyz";
-
-    const counter = document.querySelectorAll('span');
-
-   const getCount = async () => {
-    try {
-        const response = await fetch(`${COUNT_URL}/get/${NAMESPACE}/${KEY}`);
-        if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.statusText}`);
-        }
-        const data = await response.json();
-        setValue(data.value);
-    } catch (error) {
-        console.error('Fetch error:', error);
-        alert('Failed to retrieve count. Please try again later.');
-    }
-};
-
-const incrementCount = async () => {
-    try {
-        const response = await fetch(`${COUNT_URL}/hit/${NAMESPACE}/${KEY}`);
-        if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.statusText}`);
-        }
-        const data = await response.json();
-        setValue(data.value);
-    } catch (error) {
-        console.error('Fetch error:', error);
-        alert('Failed to increment count. Please try again later.');
-    }
-};
-
-
-    const setValue = (num) => {
-        const str = num.toString().padStart(6, "0");
-        for (let index = 0; index < str.length; index++) {
-            const element = str[index];
-            counter[index].innerHTML = element;
-        }
-    };
-
-    if (localStorage.getItem("phishingSimulationHasVisited") == null) {
-        incrementCount()
-            .then(() => {
-                localStorage.setItem("phishingSimulationHasVisited", "true");
-            })
-            .catch((err) => console.log(err));
-    } else {
-        getCount()
-            .catch((err) => console.log(err));
-    }
-</script>
+       <div id="sfc8yuywsj9w2z8f923hguw5td5edugcd4d"></div>
+        <script type="text/javascript" src="https://counter6.optistats.ovh/private/counter.js?c=8yuywsj9w2z8f923hguw5td5edugcd4d&down=async" async></script>
+        <noscript><a href="https://www.freecounterstat.com" title="hit counter">
+            <img src="https://counter6.optistats.ovh/private/freecounterstat.php?c=8yuywsj9w2z8f923hguw5td5edugcd4d" border="0" title="hit counter" alt="hit counter">
+        </a></noscript>
 
 </body>
 
